@@ -1,0 +1,19 @@
+.custom-wave-border {
+    border: 5px solid transparent; /* Đặt độ dày đường viền và làm cho nó trong suốt */
+    border-image: linear-gradient(to right, #2d3748, #2d3748) 1; /* Gradient màu lượn sóng */
+    border-image-slice: 1;
+    border-radius: 10px; /* Nếu bạn muốn bo góc */
+  }
+  
+  .custom-wave-border::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border: 5px dashed #2d3748; /* Đường viền nét lượn sóng */
+    border-radius: 10px; /* Nếu bạn muốn bo góc */
+    background: rgba(0, 0, 0, 0); /* Đảm bảo nền trong suốt */
+    z-index: -1; /* Đảm bảo đường viền nét lượn sóng nằm dưới nội dung */
+  }
