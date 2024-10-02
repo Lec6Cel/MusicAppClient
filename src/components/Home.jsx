@@ -1,12 +1,13 @@
 import React from "react";
 import Header from "./Header";
-import DashboardNewSongs from "./DashboardNewSongs";
+import DashboardSong from "./DashboardSongs";
 const Home = () => {
     return(
-        <div className="w-full h-auto flex flex-col items-center justify-center bg-gradient-to-r from-gray-400 to to-blue-900">
+        <div className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-400 to to-blue-900">
             <Header />
-            <div className="flex justify-center mt-10">
-                <DashboardNewSongs />
+
+            <div className="flex justify-center mt-10 flex-grow">
+            <DashboardSong/>
             </div>
         </div>
     )

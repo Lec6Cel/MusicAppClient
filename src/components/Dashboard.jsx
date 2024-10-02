@@ -10,12 +10,18 @@ import DashboardHome from "./DashboardHome";
 import DashboardSongs from "./DashboardSongs";
 import DashboardUsers from "./DashboardUsers";
 import DashboardNewSongs from "./DashboardNewSongs"
+import { useStateValue } from '../context/StateProvider'
 import Header from './Header'
+import Alert from './Alert'
 
 const Dashboard = () => {
-  return (
+  const [{
+    alertType
+  }, 
+  dispatch] = useStateValue();
 
-<div className="w-full h-auto flex flex-col items-center justify-center">
+  return (
+  <div className="w-full h-auto flex flex-col items-center justify-center">
   <Header />
   {/* Sidebar */}
   
@@ -46,10 +52,14 @@ const Dashboard = () => {
           <Route path="/newSongs" element={<DashboardNewSongs />} />
         </Routes>
       </div>
+      {
+        alertType && (
+          <Alert type ={alertType} />
+        )
+      }
 
-</div>
-
-  )
-}
+    </div>
+  );
+};
 
 export default Dashboard
